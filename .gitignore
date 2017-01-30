@@ -1,0 +1,4 @@
+/tmp
+.DS_Store
+.meteor
+node_modules
