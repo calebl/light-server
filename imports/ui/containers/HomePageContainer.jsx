@@ -1,47 +1,44 @@
 import { createContainer } from 'meteor/react-meteor-data';
 import React, { Component } from 'react';
 import { _ } from 'meteor/underscore';
+import { Meteor } from 'meteor/meteor';
 
 
 class HomePage extends Component {
   constructor(props){
     super(props);
-
+    this.state = {
+      username: ''
+    };
   }
 
 
-  render() {
-
-
-    var className = "module module--white intro ";
-
+  render(){
+    let currentUser = this.props.currentUser;
+    let userDataAvailable = (currentUser !== undefined);
+    let loggedIn = (currentUser && userDataAvailable);
     return (
-      <div id="home">
-
-        <section className="module module--white intro" >
-          <div className="row">
-            <div className="medium-5 medium-centered columns">
-
-              <h1>Hello World</h1>
-            </div>
-          </div>
-        </section>
+      <div>
+        <div className="container">
+          <h1 className="text-center">
+            { loggedIn ? 'Welcome '+currentUser.username : '' }
+          </h1>
+        </div>
       </div>
     );
   }
 }
 
 HomePage.propTypes = {
-  user: React.PropTypes.object,
+  username: React.PropTypes.string
 }
 
 export default HomePageContainer = createContainer(props => {
   // props here will have `main`, passed from the router
   // anything we return from this function will be *added* to it
 
-
-
-  return {
-    user: Meteor.user(),
-  };
+  const currentUser = Meteor.user();
+    return {
+      currentUser,
+    };
 }, HomePage);
