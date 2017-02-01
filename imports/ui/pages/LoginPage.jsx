@@ -43,7 +43,7 @@ export default class LoginPage extends Component {
                     className="form col-md-12 center-block"
                     onSubmit={this.handleSubmit}>
                 <div className="form-group">
-                  <input type="email"
+                  <input type="text"
                         id="login-email"
                         className="form-control input-lg"
                         placeholder="email"/>
