@@ -10,8 +10,8 @@ module.exports = {
   },
 
   meteor: {
-    name: 'app',
-    path: '../app',
+    name: 'light-server',
+    path: '..',
     servers: {
       one: {}
     },
@@ -20,10 +20,11 @@ module.exports = {
     },
     env: {
       ROOT_URL: 'app.com',
-      MONGO_URL: 'mongodb://localhost/meteor'
+      MONGO_URL: 'mongodb://light:chuspon@ds119748.mlab.com:19748/lightdb'
     },
 
     //dockerImage: 'kadirahq/meteord'
+    dockerImage: 'abernix/meteord:base',
     deployCheckWaitTime: 60
   },
 
