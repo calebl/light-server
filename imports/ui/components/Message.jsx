@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, {
+  Component
+} from 'react';
 import moment from 'moment';
 import {Meteor} from 'meteor/meteor';
 
@@ -10,17 +12,27 @@ export default class Message extends Component {
   }
 
   render() {
-    let isRecipient = this.props.message.recipient.id == Meteor.userId();
-    var style = {}
+    let isRecipient = this.props.message.recipient.id === Meteor.userId();
+    var style = {};
     if(isRecipient) {
+      style['textAlign'] = 'left';
+    } else {
       style['color'] = 'blue';
+      style['textAlign'] = 'right';
     }
 
     return (
-      <li>
+      <li className="message">
         <div style={style}>
-          {this.formatTime(this.props.message.createdAt)} {this.props.message.sender.username} - {this.props.message.text}
+          <div className="text">
+          {this.props.message.text}
+          </div>
+
+          <div className="signature">
+            <small>{this.formatTime(this.props.message.createdAt)} {this.props.message.sender.username}</small>
+          </div>
         </div>
+
       </li>
     );
   }
@@ -28,4 +40,4 @@ export default class Message extends Component {
 
 Message.propTypes = {
   message: React.PropTypes.object.isRequired
-}
+};

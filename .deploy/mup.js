@@ -1,7 +1,7 @@
 module.exports = {
   servers: {
     one: {
-      host: '138.197.84.191',
+      host: '104.236.35.196',
       username: 'root'
       // pem:
       // password:
@@ -11,7 +11,7 @@ module.exports = {
 
   meteor: {
     name: 'light-server',
-    path: '..',
+    path: '../',
     servers: {
       one: {}
     },
@@ -19,20 +19,12 @@ module.exports = {
       serverOnly: true,
     },
     env: {
-      ROOT_URL: 'app.com',
+      ROOT_URL: 'http://servethelight.com',
       MONGO_URL: 'mongodb://light:chuspon@ds119748.mlab.com:19748/lightdb'
     },
 
     //dockerImage: 'kadirahq/meteord'
     dockerImage: 'abernix/meteord:base',
     deployCheckWaitTime: 60
-  },
-
-  mongo: {
-    oplog: true,
-    port: 27017,
-    servers: {
-      one: {},
-    },
-  },
+  }
 };

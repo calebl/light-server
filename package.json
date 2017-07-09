@@ -2,7 +2,7 @@
   "name": "light_server",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run --settings settings.json"
   },
   "dependencies": {
     "bcrypt": "^1.0.2",
@@ -17,8 +17,7 @@
     "react-markdown": "^2.4.2",
     "react-modal": "^1.6.5",
     "react-mounter": "^1.2.0",
-    "react-router": "^3.0.0",
-    "sinch-rtc": "^1.4.5"
+    "react-router": "^3.0.0"
   },
   "devDependencies": {}
 }

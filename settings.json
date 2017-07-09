@@ -1,0 +1,3 @@
+{
+  "MONGO_URL": "mongodb://light:chuspon@ds119748.mlab.com:19748/lightdb"
+}
