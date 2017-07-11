@@ -19,8 +19,15 @@ module.exports = {
       serverOnly: true,
     },
     env: {
-      ROOT_URL: 'http://servethelight.com',
+      ROOT_URL: 'https://servethelight.com',
       MONGO_URL: 'mongodb://light:chuspon@ds119748.mlab.com:19748/lightdb'
+    },
+    ssl: {
+      // Enables let's encrypt (optional)
+      autogenerate: {
+        email: 'caleb.lenoir@gmail.com',
+        domains: 'servethelight.com,www.servethelight.com' // comma seperated list of domains
+      }
     },
 
     //dockerImage: 'kadirahq/meteord'
